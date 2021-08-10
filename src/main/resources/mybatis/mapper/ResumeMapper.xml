@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.mapper.ResumeMapper">
+
+    <select id="querySchoolList" resultType="School" >
+        select * from school;
+    </select>
+
+    <select id="queryCompanyList" resultType="Company" >
+        select * from company;
+    </select>
+
+    <select id="queryStudentList" resultType="Student" >
+        select * from student;
+    </select>
+
+    <select id="queryResumeList" resultType="Resume" >
+        select * from resume;
+    </select>
+
+
+    <select id="queryPositionList" resultType="Position" >
+        select * from position;
+    </select>
+
+    <select id="chaXun" resultType="String" >
+        select student.name from student,resume where resume.student_aid=student.aid and student.aid = 1;
+    </select>
+
+<!--    <select id="chaxun" resultType="select " >-->
+<!--        select resume.title,student.name,school.name,resume_company.name,resume_position.name from all table ;-->
+<!--    </select>-->
+
+
+</mapper>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简历详情</title>
+    <link rel="stylesheet" type="text/css" th:href="@{../css/index.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{../css/xiangqing.css}" />
+</head>
+<body>
+
+<div>
+
+    <div>
+        <p class="p1">新增/修改简历</p>
+    </div>
+
+    <div class="main">
+        <div class="left">
+
+            <li><a href="#">权限管理</a> </li>
+            <li><a href="#">部门管理</a> </li>
+            <li><a href="#">员工管理</a> </li>
+            <li><a href="#">办公区管理</a> </li>
+            <li><a href="#">用户管理</a> </li>
+            <li><a href="#">公司管理</a> </li>
+            <li><a href="#">岗位管理</a> </li>
+            <li><a href="#">车辆管理</a> </li>
+            <li><a href="#">学生管理</a> </li>
+            <li><a style="color: blue;"href="#">简历管理</a> </li>
+
+        </div>
+
+        <div class="right">
+            <p class="p2">简历管理</p>
+
+            <form th:href="@{/modify}">
+                <div class="ceng1">
+                        <span class="form-group">
+                            <label>标题:</label>
+                             <select>
+                                <option th:each="resume:${resumes}"
+                                        th:text="${resume.getTitle()}"
+                                        th:value="${resume.getAid()}">></option>
+                            </select>
+                        </span>
+                    <span class="form-group" >
+                            <label>学生:</label>
+
+                            <select>
+                                <option th:each="student:${students}"
+                                        th:text="${student.getName()}"
+                                        th:value="${student.getAid()}">></option>
+                            </select>
+                        </span>
+                </div>
+                <label class="label1">内容:</label>
+                <div class="ceng2">
+                    <input type="" name="text"  >
+                </div>
+
+
+                <div class="ceng3">
+                    <span class="form-group">
+                        <label>投递公司:</label>
+                        <select >
+                            <option type="checkbox" th:each="company:${companys}" th:text="${company.getName()}" th:value="${company.getAid()}"></option>
+                        </select>
+                    </span>
+                    <span class="form-group">
+                        <label>意向岗位:</label>
+                        <select>
+                            <option th:each="position:${positions}" th:text="${position.getName()}" th:value="${position.getAid()}">></option>
+                        </select>
+                    </span>
+                </div>
+
+                <div class="i_button">
+                    <button class="button1" type="submit" ><a th:href="@{/}">取消</a></button>
+                    <button class="button2" type="submit" ><a style="color: white" th:href="@{/xiangqing}">保存</a></button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

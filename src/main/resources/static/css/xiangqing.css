@@ -1,0 +1,63 @@
+.ceng1 input{
+    width: 150px;
+    border: 1px solid black;
+    margin-bottom: 50px;
+    border-radius: 3px;
+}
+.ceng3{
+    display: flex;
+}
+
+.form-group select{
+    width: 150px;
+    border: 1px solid black;
+    margin-bottom: 50px;
+    border-radius: 3px;
+}
+
+
+span{
+    margin-left: 100px;
+}
+.ceng2{
+    margin-left: 100px;
+
+}
+.label1{
+    margin-left: 100px;
+}
+.ceng2 input{
+    width: 600px;
+    height: 140px;
+    border-color: #ddd;
+    margin-bottom: 50px;
+    border-radius: 10px;
+
+}
+
+.i_button{
+    padding-left: 500px;
+
+}
+.button1{
+    border: solid 1px;
+    background-color: white;
+    color: black;
+    width: 60px;
+    height: 40px;
+    margin-left: 40px;
+}
+
+.button2{
+    color: white;
+    background-color: dodgerblue;
+    width: 60px;
+    height: 40px;
+    margin-left: 40px;
+}
+
+a{
+    text-decoration: none;
+}
+
+

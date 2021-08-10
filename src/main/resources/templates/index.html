@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简历管理</title>
+    <link rel="stylesheet" type="text/css" th:href="@{../css/index.css}" />
+</head>
+<body>
+
+<div>
+
+    <div>
+        <p >简历管理</p>
+        <p class="p1">简历列表</p>
+    </div>
+    <div class="main">
+        <div class="left">
+            <li><a href="#">权限管理</a> </li>
+            <li><a href="#">部门管理</a> </li>
+            <li><a href="#">员工管理</a> </li>
+            <li><a href="#">办公区管理</a> </li>
+            <li><a href="#">用户管理</a> </li>
+            <li><a href="#">公司管理</a> </li>
+            <li><a href="#">岗位管理</a> </li>
+            <li><a href="#">车辆管理</a> </li>
+            <li><a href="#">学生管理</a> </li>
+            <li><a style="color: blue;" href="#">简历管理</a> </li>
+        </div>
+
+        <div class="right">
+            <p class="p2">简历管理</p>
+            <div>
+                        <span>
+                               <label>学生 :</label>
+                                    <select>
+                        <!--                此处传学生参数-->
+                                        <option th:each="student:${students}" th:text="${student.getName()}" th:value="${student.getAid()}" ></option>
+                                    </select>
+                        </span>
+
+                         <span>
+                               <label>学校 :</label>
+                                    <select >
+                        <!--                此处传学校参数-->
+                                        <option  th:each="school:${schools}" th:text="${school.getName()}" th:value="${school.getAid()}"></option>
+                                    </select>
+                        </span>
+
+                        <span>
+                               <label>公司 :</label>
+                                    <select>
+                        <!--                此处传公司参数-->
+                                        <option th:each="company:${companys}" th:text="${company.getName()}" th:value="${company.getAid()}" ></option>
+                                    </select>
+                        </span>
+                <!--            -->
+                <span><button >查询</button></span>
+
+            </div>
+            <p class="p2">简历列表</p>
+            <div class="">
+                <table >
+                    <thead>
+                    <tr>
+                        <th>标题</th>
+                        <th>学生姓名</th>
+                        <th>学校</th>
+                        <th>投递公司</th>
+                        <th>意向岗位</th>
+                        <th>更新时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr th:each="resume:${resumes}">
+                        <td  th:text="${resume.getTitle()}"></td>
+                        <td ></td>
+                        <td ></td>
+                        <td ></td>
+                        <td ></td>
+                        <td>6</td>
+                        <td>
+                            <a style="color: black;"th:href="@{/xiangqing}">详情</a>
+                            <a style="color: blue;"th:href="@{/modify/}">修改</a>
+                            <a style="color: red;"th:href="@{/templates/}">删除</a>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+</body>
+</html>
